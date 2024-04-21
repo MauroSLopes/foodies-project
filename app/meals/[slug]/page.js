@@ -3,6 +3,8 @@ import classes from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
 
+export const generateStaticParams = () => [{ slug: "slug" }];
+
 export async function generateMetadata({ params }) {
     const meal = getMeal(params.slug);
 
